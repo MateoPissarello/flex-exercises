@@ -4,7 +4,7 @@ int words = 0;
 int lines = 0;
 %}
 %%
-[a-zA-Z]+ { words++; chars += strlen(yytext); }
+[a-zA-Z0-9_!@#$%^&*()_+{}\[\]:;"'<>,.?/~`|-]+ { words++; chars += strlen(yytext); }
 \n { chars++; lines++; }
 . { chars++; }
 %%
